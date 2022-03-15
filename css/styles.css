@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /**
- * @author Prénom Nom courriel
+ * @author Anaïs Mannée-Batschy <2134649@csfoy.ca>
  *
  * TABLE DES MATIERES
  * Normalize
@@ -19,15 +19,15 @@
 
 /* Normalize
    ========================================================================== */
-@import url(_normalize.css);
+   @import url(_normalize.css);
 
 /* Utilitaires
    ========================================================================== */
- 
+
 
 /* Charte typographique
    ========================================================================== */
- 
+   @import url(tp3_typo.css);  
 
 /* Grille
    ========================================================================== */
@@ -35,4 +35,286 @@
 
 /* Mise en page
    ========================================================================== */
- 
+/*Mise en page*/
+body{
+   display: flex;
+   flex-direction: column;
+   justify-content: stretch;
+   align-items: stretch;
+   background-color: white;
+   background-image: none;
+}
+@media (min-width: 600px){
+   body{
+      background-image: linear-gradient(to bottom right, aquamarine, white);
+   }
+}
+.layout{
+   background-color: white;
+   max-width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: baseline;
+   align-items: stretch;
+}
+@media (min-width: 600px){
+   .layout{
+      width: 1000px;
+      margin: auto;
+      box-shadow: #888 2px 2px 5px;
+   }
+}
+
+/*En-tête*/
+@media(min-width: 600px){
+   header{
+      background-image: url(../images/bandeau_1200.jpg);
+      background-position: 0px 0px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      min-height: 300px;
+      max-width: 100%;
+      max-height: 100%;
+   }
+}
+
+@media(min-width: 600px){
+   header picture{
+     display: none;
+   }
+ }
+
+picture img{
+   max-width: 100%;
+}
+
+/*Corps du texte*/
+main{
+   display: flex;
+   flex-direction: column;
+   justify-content: stretch;
+   align-items: stretch;
+}
+@media(min-width: 600px){
+   main{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+   }
+}
+@media(min-width:600px){
+   main h1{
+      width: 100%;
+   }
+}
+@media(min-width:600px){
+   main .explicationConcours{
+      width: 30%;
+      border-radius: 10px;
+      margin: .2em;
+   }
+}
+@media(min-width:600px){
+   main form {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+      align-items: stretch;  
+      max-width: 100%;
+   }
+}
+
+/**Formulaire**/
+.couponParticipation, 
+.questionDuJour{
+   background-color: rgb(210, 210, 210);
+   border: none;
+   border-radius: .5em;
+   margin-top: .5em;
+}
+.couponParticipation fieldset,
+.questionDuJour fieldset{
+   border: 2px solid black;
+   border-radius: .5em;
+   max-width: 100%;
+}
+input{
+   border: .1em solid;
+   border-top-color: black;
+   border-right-color: grey;
+   border-bottom-color: grey;
+   border-left-color: black;
+   border-radius: .3em; 
+}
+legend{
+   font-weight: bolder;
+}
+form p{
+   display: flex;
+   flex-direction: column;
+}
+
+/*Coupon de participation*/
+.telephoneComplet{
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   align-items: baseline;
+   flex-wrap: wrap;
+}
+.indicatif{
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   width: min-content;
+}
+.indicatif input{
+   width: 30%;
+}
+.telephoneComplet p{
+   margin-right: .6em;
+   margin-left: .6em;
+   align-content: center;
+}
+.numero{
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: baseline;
+   width: 60%;
+   flex: 1 0 auto;
+}
+.numero input{
+   max-width: 100%;
+}
+.telephoneComplet>p{
+   flex: none;
+}
+.telephoneComplet .erreur{
+   width: 100%;
+}
+
+/*Question du jour*/
+.questionDuJour{
+   max-width: 100%;
+}
+.dateComplete {
+   display: flex; 
+   flex-direction: row;
+   justify-content: flex-start;
+   align-items: baseline;
+   flex-wrap: wrap;
+}
+.jour,
+.mois,
+.annee{
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: baseline; 
+   max-width: calc(100%/3);
+   flex: 1 0 auto;
+}
+.jour input,
+.mois select,
+.annee input{
+   max-width: 80%;
+}
+
+.dateComplete .erreur{
+   width: 100%;
+}
+
+/*Images du formulaire*/
+.boutonsRadio{
+   list-style-type: none;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding-left: 0px;
+}
+@media(min-width:600px){
+   .boutonsRadio{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: stretch;
+      margin: 0em;
+   }
+}
+li{
+   display: inline;
+   width: inherit;
+   margin-right: .2em;
+   margin-left: .2em;
+}
+input[type=radio] label{
+   display: inline-block;
+   border: 2px solid transparent;
+   cursor: pointer;
+}
+label picture img{
+   display: block;
+   filter: grayscale(100%);
+}
+
+
+/*Fin du formulaire*/
+.soumission input{
+   background-color: rgb(134, 175, 134);
+   font-weight: bold;
+   padding: .5em;
+   border: 1px solid gray;
+   border-radius: 10px;
+}
+
+/*Interactivité*/
+.screen-reader-only{
+   border: 0;
+   clip: rect(0 0 0 0);
+   height: 1px;
+   margin: -1px;
+   overflow: hidden;
+   padding: 0;
+   position: absolute;
+   width: 1px;
+}
+.screen-reader-only.focusable:active, 
+.screen-reader-only.focusable:hover{
+   clip:auto;
+   height: auto; 
+   margin: 0;
+   overflow: visible;
+   position: static;
+   width: auto;
+}
+input[type=radio]{
+   filter: grayscale(80%);
+}
+
+input[type=radio]:hover label img,
+input[type=radio]:focus label img{
+   filter: none;
+}
+input[type="radio"]:checked{
+   filter: none;
+   border: 1px solid black;
+}
+
+
+.erreur{
+  display: none;
+}
+
+/*Footer*/
+footer{
+   align-self: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   align-self: center;
+   max-width: 100%;
+}
