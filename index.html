@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,8 +11,9 @@
         <div class="layout">
             <header>
                 <picture>
-                    <source srcset="./images/bandeau_600.jpg" media="max-width: 600px">
-                    <source srcset="./images/bandeau_1200.jpg" media="min-width: 600px">
+<!--                    il faut placer entre () les requêtes media comme dans la .css-->
+                    <source srcset="./images/bandeau_600.jpg" media="(max-width: 600px)">
+                    <source srcset="./images/bandeau_1200.jpg" media="(min-width: 600px)">
                     <img src="./images/bandeau_600.jpg" alt="Voyage de rêve - Au menu">
                 </picture>
             </header>
@@ -34,8 +35,8 @@
                         <legend>Nom complet</legend>
                         <div class="nomComplet ctnValidation">
                             <p class="prenom">    
-                                <label for="prénom">Prénom</label>
-                                <input type="text" name="prénom" id="prénom" pattern="[a-zA-ZÀ-ÿ \-]+" required> 
+                                <label for="prenom">Prénom</label>
+                                <input type="text" name="prenom" id="prenom" pattern="[a-zA-ZÀ-ÿ \-]+" required>
                             </p>
                             <p class="nom">
                                 <label for="nom">Nom</label>
@@ -229,7 +230,8 @@
                             <div class="question ctnValidation">
                                 <ul class="boutonsRadio">
                                     <li class="chateauIf">
-                                        <input type="radio" name="chateauIf" id="chateauIf" class="screen-reader-only" required>
+                                        <input type="radio"
+                                               name="monument" id="chateauIf" class="screen-reader-only" required>
                                         <label for="chateauIf">
                                             <picture>
                                                 <source media="(max-width: 600px)" srcset="./images/chateaudIf.jpg">
@@ -240,7 +242,8 @@
                                         </label>
                                     </li>
                                     <li class="palaisLuxembourg">
-                                        <input type="radio" name="palaisLuxembourg" id="palaisLuxemboug" class="screen-reader-only">
+                                        <input type="radio"
+                                               name="monument" id="palaisLuxemboug" class="screen-reader-only">
                                         <label for="palaisLuxemboug">
                                             <picture>
                                                 <source media="(max-width: 600px)" srcset="./images/palaisluxembourg.jpg">
@@ -251,7 +254,8 @@
                                         </label>
                                     </li>
                                     <li class="tajMahal">
-                                        <input type="radio" name="tajMahal" id="tajMahal" class="screen-reader-only"> 
+                                        <input type="radio"
+                                               name="monument" id="tajMahal" class="screen-reader-only">
                                         <label for="tajMahal">
                                             <picture>
                                                 <source media="(max-width: 600px)" srcset="./images/tajmahal.jpg">
@@ -275,8 +279,9 @@
                     
                     <div class="reglementConcours ctnValidation">
                         <p class="checkbox">
+                            <label for="reglement">
                             <input type="checkbox" value="checked" name="reglement" id="reglement" required>
-                            <label for="reglement">J'ai lu et j'accepte le <a href="./pdf/Reglements-Voyage-De-Reve-Au-Menu.pdf">règlement du concours</a> et je confirme avoir atteint l’âge de majorité dans ma province de résidence.</label>
+                            J'ai lu et j'accepte le <a href="./pdf/Reglements-Voyage-De-Reve-Au-Menu.pdf">règlement du concours</a> et je confirme avoir atteint l’âge de majorité dans ma province de résidence.</label>
                         </p>
                         <p class="erreur checkbox">
                             <span>
@@ -297,8 +302,8 @@
             </main>
         </div>
         <footer>
-            <p><b>©<date>2021</date>, Anaïs Mannée-Batschy.</b></p>
-            <p>Réalisé dans le cadre du cours Intégration II, <a href="http://www.timcsf.ca">Programme TIM</a>, <a href="http://www.csf.ca">Cégep de Sainte-Foy</a>.</p>
+            <p><strong>©<time>2021</time>, Anaïs Mannée-Batschy.</strong></p>
+            <p>Réalisé dans le cadre du cours Intégration II, <a href="https://www.timcsf.ca">Programme TIM</a>, <a href="https://www.csf.ca">Cégep de Sainte-Foy</a>.</p>
         </footer>
 
     </body>

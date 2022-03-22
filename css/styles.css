@@ -19,7 +19,7 @@
 
 /* Normalize
    ========================================================================== */
-   @import url(_normalize.css);
+   @import url(normalize.css);
 
 /* Utilitaires
    ========================================================================== */
@@ -27,7 +27,7 @@
 
 /* Charte typographique
    ========================================================================== */
-   @import url(tp3_typo.css);  
+   @import url(typo.css);
 
 /* Grille
    ========================================================================== */
@@ -54,7 +54,7 @@ body{
    max-width: 100%;
    display: flex;
    flex-direction: column;
-   justify-content: baseline;
+   /*justify-content: baseline;*/
    align-items: stretch;
 }
 @media (min-width: 600px){
@@ -69,7 +69,7 @@ body{
 @media(min-width: 600px){
    header{
       background-image: url(../images/bandeau_1200.jpg);
-      background-position: 0px 0px;
+      /*background-position: 0px 0px;*/
       background-repeat: no-repeat;
       background-size: contain;
       min-height: 300px;
@@ -234,7 +234,7 @@ form p{
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   padding-left: 0px;
+   padding-left: 0;
 }
 @media(min-width:600px){
    .boutonsRadio{
@@ -242,7 +242,7 @@ form p{
       flex-direction: row;
       justify-content: space-around;
       align-items: stretch;
-      margin: 0em;
+      margin: 0;
    }
 }
 li{
@@ -294,13 +294,17 @@ label picture img{
 input[type=radio]{
    filter: grayscale(80%);
 }
-
-input[type=radio]:hover label img,
-input[type=radio]:focus label img{
+/* attention ici ça prend des sélecteurs de frère adjacent + plutôt que contextuel */
+input[type=radio]:hover+label img,
+input[type=radio]:focus+label img{
    filter: none;
 }
-input[type="radio"]:checked{
-   filter: none;
+input[type="radio"]+label{
+   display: block;
+   padding: 1px;
+   border: 1px solid transparent;
+}
+input[type="radio"]:checked+label{
    border: 1px solid black;
 }
 
@@ -315,6 +319,6 @@ footer{
    display: flex;
    flex-direction: column;
    align-items: center;
-   align-self: center;
+   /*align-self: center;*/
    max-width: 100%;
 }
